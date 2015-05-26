@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DPIVA:DPIVA xmlns:cat="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/1/Catalogos"
+ xmlns:DPIVA="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/TipoDPIVA/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/TipoDPIVA/1 file:/Users/tony/Dropbox/Work/Diverza/PSRDD/DPIVA.xsd" Version="1.0" Ejercicio="411267459" TipoPerid="08" Periodo="31" DPIVA="0" TipoDec="1" FolioAnt="Eb3Jm"
+     FechPresAnt="2017-02-28Z">
+    <DPIVA:Totales TotOperac="6666823" TotActPagTas15o16IVA="1423407774" TotActPagTas15IVA="1362232342" TotIVAPagNoAcrTas15o16="580677000"
+         TotActPagTas10u11IVA="1748316831" TotActPagTas10IVA="613667208" TotIVAPagNoAcrTas10u11="1786664489"
+         TotActPagImpBySTas15o16IVA="1060122440" TotIVAPagNoAcrImpTas15o16="238491946" TotActPagImpBySTas10u11IVA="1442843508"
+         TotIVAPagNoAcrImpTas10u11="800778418" TotActPagImpBySNoPagIVA="1037055259" TotDemActPagTas0IVA="1517341749"
+         TotActPagNoPagIVA="2016874985" TotIVARetCont="1672632051" TotIVADevDescyBonifComp="360007240"
+         TotIVATraslContExcImpByS="808753858" TotIVAPagImpByS="365145699"/>
+    <DPIVA:ProvNacional TipoOperac="06" RFCProv="COZ&amp;62180432A" ValActPagTas15o16IVA="94503813" ValActPagTas15IVA="451196059"
+         MonIVAPagNoAcrTas15o16="1474114380" ValActPagTas10u11IVA="1151302798" ValActPagTas10IVA="1711932198"
+         MonIVAPagNoAcrTas10u11="2026140317" ValActPagTas0IVA="365596002" ValActPagNoIVA="1126955510"
+         IVARetCont="134450325" IVADevDescyBonifComp="13634255"/>
+    <DPIVA:ProvNacional TipoOperac="06" RFCProv="UÑQ100706V46" ValActPagTas15o16IVA="470594467" ValActPagTas15IVA="408874882"
+         MonIVAPagNoAcrTas15o16="586180597" ValActPagTas10u11IVA="736261080" ValActPagTas10IVA="236473059"
+         MonIVAPagNoAcrTas10u11="762765311" ValActPagTas0IVA="2001660123" ValActPagNoIVA="1506645603"
+         IVARetCont="1736867494" IVADevDescyBonifComp="169977730"/>
+    <DPIVA:ProvExtranjero TipoOperac="85" RFCProv="&amp;HÑ3708355Z5" NumIDFiscal="sQIDFy.gZ3UQkNLfygB" NombExtranjero="TLwvQ.VvVny-mFZDD3JyMvXUfV0a"
+         PaisResidencia="TG" Nacionalidad="jkOeKkVKnPUV6eg33" ValActPagTas15o16IVA="1612146176" ValActPagTas15IVA="213749999"
+         MonIVAPagNoAcrTas15o16="565140719" ValActPagTas10u11IVA="835861174" ValActPagTas10IVA="1121756595"
+         MonIVAPagNoAcrTas10u11="2109505503" ValActPagImpBySTas15o16IVA="911828701" MonIVAPagNoAcrImpTas15o16="353497022"
+         ValActPagImpBySTas10u11IVA="327842222" MonIVAPagNoAcrImpTas10u11="772552171" ValActPagImpBySNoIVA="1372330935"
+         ValActPagTas0IVA="12061760" ValActPagNoIVA="1038481688" IVARetCont="1185818883" IVADevDescyBonifComp="1055973067"/>
+    <DPIVA:ProvExtranjero TipoOperac="03" RFCProv="&amp;ÑD671726226" NumIDFiscal="UeQrKrV4KTpYsTWDvwqOVsC6I" NombExtranjero="aGBhrQnfh0uSsAY_az-n8J0NAn-7"
+         PaisResidencia="SD" Nacionalidad="Qasg2SB.EB-.McZVCNfpXljedrLpN" ValActPagTas15o16IVA="1924786919"
+         ValActPagTas15IVA="2120278063" MonIVAPagNoAcrTas15o16="370581559" ValActPagTas10u11IVA="1998139867"
+         ValActPagTas10IVA="861180804" MonIVAPagNoAcrTas10u11="276481161" ValActPagImpBySTas15o16IVA="2063381123"
+         MonIVAPagNoAcrImpTas15o16="1570985988" ValActPagImpBySTas10u11IVA="582187499" MonIVAPagNoAcrImpTas10u11="1955718510"
+         ValActPagImpBySNoIVA="1611972025" ValActPagTas0IVA="1540977825" ValActPagNoIVA="1562895018"
+         IVARetCont="1213543943" IVADevDescyBonifComp="1711085207"/>
+    <DPIVA:ProvGlobal TipoOperac="03" ValActPagTas15o16IVA="217930521" ValActPagTas15IVA="495819763" MonIVAPagNoAcrTas15o16="36780419"
+         ValActPagTas10u11IVA="1340650016" ValActPagTas10IVA="305773285" MonIVAPagNoAcrTas10u11="1529136785"
+         ValActPagImpBySTas15o16IVA="842741068" MonIVAPagNoAcrImpTas15o16="1726487722" ValActPagImpBySTas10u11IVA="1477389252"
+         MonIVAPagNoAcrImpTas10u11="609764195" ValActPagImpBySNoIVA="1593598101" ValActPagTas0IVA="420104759"
+         ValActPagNoIVA="1327042397" IVARetCont="1935217921" IVADevDescyBonifComp="1220330333"/>
+    <DPIVA:ProvGlobal TipoOperac="85" ValActPagTas15o16IVA="1063284554" ValActPagTas15IVA="464063145" MonIVAPagNoAcrTas15o16="1261828468"
+         ValActPagTas10u11IVA="1901929796" ValActPagTas10IVA="2049357468" MonIVAPagNoAcrTas10u11="1657800170"
+         ValActPagImpBySTas15o16IVA="2043193466" MonIVAPagNoAcrImpTas15o16="934480219" ValActPagImpBySTas10u11IVA="1659249843"
+         MonIVAPagNoAcrImpTas10u11="1594667722" ValActPagImpBySNoIVA="1991649971" ValActPagTas0IVA="1550995118"
+         ValActPagNoIVA="1603380039" IVARetCont="547202582" IVADevDescyBonifComp="254182491"/>
+</DPIVA:DPIVA>

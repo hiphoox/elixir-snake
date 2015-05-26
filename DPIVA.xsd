@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:DPIVA="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/TipoDPIVA/1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cat="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/1/Catalogos" targetNamespace="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/TipoDPIVA/1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/1/Catalogos" schemaLocation="http://esquemas.clouda.sat.gob.mx/archivos/DoctosDigitales/1/Catalogos/CatDoctoDigital.xsd"/>
+	<xs:element name="DPIVA">
+		<xs:annotation>
+			<xs:documentation>Estándar del tipo del documento digital declaración proveedores IVA a través de internet</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Totales">
+					<xs:annotation>
+						<xs:documentation>Nodo obligatorio que indica los totales del tipo del documento declaración proveedores IVA a través de internet.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="TotOperac" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el total de operaciones que relaciona en la DPIVA.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="0"/>
+									<xs:totalDigits value="7"/>
+									<xs:fractionDigits value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="TotActPagTas15o16IVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - valor de los actos o actividades pagados a la tasa del 15 ó 16% de IVA.  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotActPagTas15IVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - valor de los actos o actividades pagados a la tasa del 15% de IVA.  En caso de que no existan datos, colocar cero. Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es mensual y el periodo es enero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVAPagNoAcrTas15o16" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - monto del IVA pagado no acreditable a la tasa del 15 ó 16% (correspondiente en la proporción de las deducciones autorizadas). En caso de que no existan datos, colocar cero</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotActPagTas10u11IVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - valor de los actos o actividades pagados a la tasa del 10 u 11% de IVA.  En caso de que no existan datos, colocar cero. Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotActPagTas10IVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - valor de los actos o actividades pagados a la tasa del 10% de IVA.  En caso de que no existan datos, colocar cero. Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es enero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVAPagNoAcrTas10u11" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - monto del IVA pagado no acreditable a la tasa del 10 u 11% (correspondiente en la proporción de las deducciones autorizadas).  En caso de que no existan datos, colocar cero. Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotActPagImpBySTas15o16IVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - valor de los actos o actividades pagados en la importación de bienes y servicios a la tasa del 15 ó 16% de IVA.  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVAPagNoAcrImpTas15o16" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - monto del IVA pagado no acreditable por la importación a la tasa del 15 ó 16% (correspondiente en la proporción de las deducciones autorizadas).  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotActPagImpBySTas10u11IVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - valor de los actos o actividades pagados en la importación de bienes y servicios a la tasa del 10 u 11% de IVA.  En caso de que no existan datos, colocar cero. Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVAPagNoAcrImpTas10u11" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  - monto del IVA pagado no acreditable por la importación a la tasa del 10 u 11% (correspondiente en la proporción de las deducciones autorizadas).  En caso de que no existan datos, colocar cero. Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotActPagImpBySNoPagIVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  -valor de los actos o actividades pagados en la importación de bienes y servicios por los que no se pagará el IVA (exentos).  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotDemActPagTas0IVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  -valor de los demás actos o actividades pagados a la tasa del 0% de IVA.  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotActPagNoPagIVA" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  -valor de los actos o actividades pagados por los que no se pagará el IVA  (exentos).  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVARetCont" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  -IVA retenido por el contribuyente.  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVADevDescyBonifComp" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el valor total de los datos registrados en  -IVA correspondiente a las devoluciones, descuentos y bonificaciones sobre compras.  En caso de que no existan datos, colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVATraslContExcImpByS" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el total de IVA trasladado al contribuyente excepto importaciones de bienes y servicios (pagado).  En caso de que no existan datos, colocar cero. Aplicable cuando el ejercicio a declarar es 2010 y posteriores (= (total de los actos o actividades pagados a la tasa del 15 ó 16% de IVA * 0.16) + (total de los actos o actividades pagados a la tasa del 10 u 11% de IVA * 0.11) + (total de los actos o actividades pagados a la tasa del 15% de IVA *  0.15) + (total de los actos o actividades pagados a la tasa del 10% de IVA *  0.10)), cuando el ejercicio a declarar es 2007, 2008 ó 2009 (=(total de los actos o actividades pagados a la tasa del 15 ó 16% de IVA * 0.15) + (total de los actos o actividades pagados a la tasa del 10 u 11% de IVA *  0.10)).  Importante:  El resultado no presenta decimales (de .01 a .50 se ajustará a la unidad inmediata inferior  y  de .51 a .99 se ajustará a la unidad inmediata superior) </xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TotIVAPagImpByS" type="cat:t_ImporteRnd14" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el total de IVA pagado en las importaciones de bienes y servicios.  En caso de que no existan datos, colocar cero. Aplicable cuando el ejercicio a declarar es 2010 y posteriores (=(total de los actos o actividades pagados en la importación de bienes y servicios  a la tasa del 15 ó 16% de IVA * 0.16) + (total de los actos o actividades pagados en la importación de bienes y servicios  a la tasa del 10 u 11% de IVA * 0.11)), cuando el ejercicio a declarar es 2007, 2008 ó 2009 (=(total de los actos o actividades pagados en la importación de bienes y servicios  a la tasa del 15 ó 16% de IVA * 0.15) + (total de los actos o actividades pagados en la importación de bienes y servicios  a la tasa del 10 u 11% de IVA * 0.10)).  Importante:  El resultado no presenta decimales (de .01 a .50 se ajustará a la unidad inmediata inferior  y  de .51 a .99 se ajustará a la unidad inmediata superior) </xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProvNacional" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Nodo opcional que indica el detalle de las operaciones realizadas con proveedores nacionales.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="TipoOperac" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido que indica el tipo de operación que se declara, donde el valor 03 = Prestación de Servicios Profesionales, 06 = Arrendamiento de Inmuebles y 85 = Otros</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="03"/>
+									<xs:enumeration value="06"/>
+									<xs:enumeration value="85"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="RFCProv" type="cat:t_RFC" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para incorporar la clave en el Registro Federal de Contribuyentes del Proveedor, sin guiones o espacios.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas15o16IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor   de los actos o actividades pagados a la tasa del 15 ó 16% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas15IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 15% de IVA.  Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es mensual y el periodo es enero.  Se puede colocar cero. (Este campo se utilizará únicamente para efectos de declarar enajenación de bienes, prestación de servicios o el otorgamiento del uso o goce temporal de bienes celebrados con anterioridad al ejercicio 2010, así como de conformidad con lo establecido en las disposiciones transitorias de la ley del impuesto al valor agregado)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrTas15o16" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable a la tasa del 15 ó 16% (correspondiente en la proporción de las deducciones autorizadas).  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas10u11IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 10 u 11% de IVA.  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas10IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 10% de IVA.  Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es mensual y el periodo es enero.  Se puede colocar cero. (Se utilizará únicamente para efectos de declarar enajenación de bienes, prestación de servicios o el otorgamiento del uso o goce temporal de bienes celebrados con anterioridad al ejercicio 2010, así como de conformidad con lo establecido en las disposiciones transitorias de la ley del impuesto al valor agregado).</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrTas10u11" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable a la tasa del 10 u 11% (correspondiente en la proporción de las deducciones autorizadas).  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas0IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los demás actos o actividades pagados a la tasa del 0% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagNoIVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados por los que no se pagará el IVA  (exentos).  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="IVARetCont" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el IVA retenido por el contribuyente.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="IVADevDescyBonifComp" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el IVA correspondiente a las devoluciones, descuentos y bonificaciones sobre compras.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProvExtranjero" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Nodo opcional que indica el detalle de las operaciones realizadas con proveedores extranjeros.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="TipoOperac" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido que indica el tipo de operación que se declara, donde el valor 03 = Prestación de Servicios Profesionales y 85 = Otros</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="03"/>
+									<xs:enumeration value="85"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="RFCProv" type="cat:t_RFC" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para incorporar la clave en el Registro Federal de Contribuyentes del proveedor, sin guiones o espacios.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="NumIDFiscal" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para expresar el identificador fiscal del proveedor extranjero.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="40"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NombExtranjero" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido que permite expresar el nombre del proveedor extranjero.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="43"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="PaisResidencia" type="cat:c_Pais" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar el país de residencia del proveedor extranjero de acuerdo al catálogo publicado en la página de internet del SAT.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Nacionalidad" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido para indicar la nacionalidad del proveedor extranjero.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="40"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas15o16IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor   de los actos o actividades pagados a la tasa del 15 ó 16% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas15IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 15% de IVA.  Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es mensual y el periodo es enero.  Se puede colocar cero. (Este campo se utilizará únicamente para efectos de declarar enajenación de bienes, prestación de servicios o el otorgamiento del uso o goce temporal de bienes celebrados con anterioridad al ejercicio 2010, así como de conformidad con lo establecido en las disposiciones transitorias de la ley del impuesto al valor agregado)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrTas15o16" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable a la tasa del 15 ó 16% (correspondiente en la proporción de las deducciones autorizadas).  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas10u11IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 10 u 11% de IVA.  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas10IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 10% de IVA.  Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es mensual y el periodo es enero. Se puede colocar cero. (Se utilizará únicamente para efectos de declarar enajenación de bienes, prestación de servicios o el otorgamiento del uso o goce temporal de bienes celebrados con anterioridad al ejercicio 2010, así como de conformidad con lo establecido en las disposiciones transitorias de la ley del impuesto al valor agregado).</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrTas10u11" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable a la tasa del 10 u 11% (correspondiente en la proporción de las deducciones autorizadas).  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagImpBySTas15o16IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados en la importación de bienes y servicios a la tasa del 15 ó 16% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrImpTas15o16" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable por la importación a la tasa del 15 ó 16% (correspondiente en la proporción de las deducciones autorizadas).  En caso de registrar se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagImpBySTas10u11IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados en la importación de bienes y servicios a la tasa del 10 u 11% de IVA.  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero. </xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrImpTas10u11" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable por la importación a la tasa del 10 u 11% (correspondiente en la proporción de las deducciones autorizadas).  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagImpBySNoIVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados en la importación de bienes y servicios por los que no se pagará el IVA (exentos).  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas0IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los demás actos o actividades pagados a la tasa del 0% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagNoIVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados por los que no se pagará el IVA  (exentos).  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="IVARetCont" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el IVA retenido por el contribuyente.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="IVADevDescyBonifComp" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el IVA correspondiente a las devoluciones, descuentos y bonificaciones sobre compras.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProvGlobal" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Nodo opcional que indica el detalle de las operaciones realizadas con proveedores globales.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="TipoOperac" use="required">
+							<xs:annotation>
+								<xs:documentation>Atributo requerido que indica el tipo de operación que se declara, donde el valor 03 = Prestación de Servicios Profesionales, 06 = Arrendamiento de Inmuebles y 85 = Otros</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="03"/>
+									<xs:enumeration value="06"/>
+									<xs:enumeration value="85"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas15o16IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor   de los actos o actividades pagados a la tasa del 15 ó 16% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas15IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 15% de IVA. . Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es mensual y el periodo es enero. Se puede colocar cero. (Este campo se utilizará únicamente para efectos de declarar enajenación de bienes, prestación de servicios o el otorgamiento del uso o goce temporal de bienes celebrados con anterioridad al ejercicio 2010, así como de conformidad con lo establecido en las disposiciones transitorias de la ley del impuesto al valor agregado)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrTas15o16" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable a la tasa del 15 ó 16% (correspondiente en la proporción de las deducciones autorizadas).  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas10u11IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 10 u 11% de IVA.  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas10IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados a la tasa del 10% de IVA. Aplicable solo cuando el ejercicio a declarar es 2010, el tipo de periodicidad es mensual y el periodo es enero. Se puede colocar cero. (Se utilizará únicamente para efectos de declarar enajenación de bienes, prestación de servicios o el otorgamiento del uso o goce temporal de bienes celebrados con anterioridad al ejercicio 2010, así como de conformidad con lo establecido en las disposiciones transitorias de la ley del impuesto al valor agregado)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrTas10u11" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable a la tasa del 10 u 11% (correspondiente en la proporción de las deducciones autorizadas).  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagImpBySTas15o16IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados en la importación de bienes y servicios a la tasa del 15 ó 16% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrImpTas15o16" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable por la importación a la tasa del 15 ó 16% (correspondiente en la proporción de las deducciones autorizadas).  En caso de registrar se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagImpBySTas10u11IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados en la importación de bienes y servicios a la tasa del 10 u 11% de IVA.  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero. </xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="MonIVAPagNoAcrImpTas10u11" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el monto del IVA pagado no acreditable por la importación a la tasa del 10 u 11% (correspondiente en la proporción de las deducciones autorizadas).  Aplicable solo cuando el ejercicio a declarar es menor o igual a 2013 o si es 2014 con el tipo de periodicidad  mensual y el periodo es enero.  Se puede colocar cero. (En las deducciones parcialmente deducibles se indicara el monto que no sea deducible para efectos del ISR; ejemplo: en un gasto donde el 80% es deducible y el 20% no es deducible, el IVA que se anotara en este campo es el que corresponda al 20%)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagImpBySNoIVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados en la importación de bienes y servicios por los que no se pagará el IVA (exentos).  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagTas0IVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los demás actos o actividades pagados a la tasa del 0% de IVA.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ValActPagNoIVA" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el valor de los actos o actividades pagados por los que no se pagará el IVA  (exentos).  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="IVARetCont" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el IVA retenido por el contribuyente.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="IVADevDescyBonifComp" type="cat:t_ImporteRnd12" use="optional">
+							<xs:annotation>
+								<xs:documentation>Atributo opcional para indicar el IVA correspondiente a las devoluciones, descuentos y bonificaciones sobre compras.  En caso de registrar se puede colocar cero.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:string" use="required" fixed="1.0">
+				<xs:annotation>
+					<xs:documentation>Atributo requerido con valor prefijado que indica la versión del estándar bajo el que se encuentra expresada la Declaración de Proveedores IVA.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Ejercicio" use="required">
+				<xs:annotation>
+					<xs:documentation>Atributo requerido que indica el ejercicio del que se realiza el documento digital</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="2015"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TipoPerid" use="required">
+				<xs:annotation>
+					<xs:documentation>Atributo requerido que indica el tipo de periodicidad del que se realiza el documento digital de acuerdo al catálogo publicado en la página del SAT.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="cat:c_TipoPeriodicidad">
+						<xs:length value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Periodo" use="required">
+				<xs:annotation>
+					<xs:documentation>Atributo requerido que indica el periodo del que se realiza el Documento Digital, de acuerdo al tipo de periodicidad y al catálogo publicado en la página del SAT.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="cat:c_Periodo">
+						<xs:length value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DPIVA" use="required">
+				<xs:annotation>
+					<xs:documentation>Atributo requerido que indica de acuerdo a su valor:  0 = La presenta sin operaciones, 1 = La presenta con datos.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TipoDec" use="required">
+				<xs:annotation>
+					<xs:documentation>Atributo requerido que indica si la declaración es:  1 = Normal, 2 = Complementaria.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="FolioAnt" use="optional">
+				<xs:annotation>
+					<xs:documentation>Atributo opcional que indica el número de operación o folio con que se presentó la Declaración que se está sustituyendo.  Este dato se convierte en requerido cuando el tipo de declaración es complementaria.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="14"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="FechPresAnt" use="optional">
+				<xs:annotation>
+					<xs:documentation>Atributo opcional que indica la fecha de presentación de la Declaración que se está sustituyendo en formato aaaa-mm-dd. Este dato se convierte en requerido cuando el tipo de declaración es complementaria.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:date">
+						<xs:minInclusive value="2007-01-01"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
