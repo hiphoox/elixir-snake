@@ -5,14 +5,13 @@ defmodule Snake.Supervisor do
     Supervisor.start_link(__MODULE__, :ok,name: __MODULE__ )
   end
 
-
   def init(:ok) do
-   
+
     pool_options = [
       name: {:local, :snake_pool},
       worker_module: Snake.Worker,
-      size: 20,
-      max_overflow: 60
+      size: 5,
+      max_overflow: 10
     ]
 
     children = [
@@ -20,8 +19,6 @@ defmodule Snake.Supervisor do
     ]
 
     supervise(children, strategy: :one_for_all)
-
-
   end
 
 end
